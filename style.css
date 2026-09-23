@@ -1,0 +1,119 @@
+:root {
+  --blue-950: #071a3d;
+  --blue-900: #0a2a66;
+  --blue-700: #075fcf;
+  --blue-500: #1f8bff;
+  --blue-300: #8dccff;
+  --blue-100: #e7f4ff;
+  --white: #ffffff;
+  --ink: #10213f;
+  --muted: #60718f;
+  --shadow: 0 24px 70px rgba(7, 26, 61, 0.18);
+  --radius: 28px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(31, 139, 255, 0.25), transparent 34rem),
+    radial-gradient(circle at top right, rgba(141, 204, 255, 0.32), transparent 30rem),
+    linear-gradient(180deg, #f7fbff 0%, #dcedff 100%);
+  overflow-x: hidden;
+}
+
+button,
+input,
+audio {
+  font: inherit;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 88vh;
+  padding: 5rem 1.25rem;
+  text-align: center;
+  color: var(--white);
+  background:
+    linear-gradient(rgba(7, 26, 61, 0.58), rgba(7, 26, 61, 0.32)),
+    linear-gradient(135deg, var(--blue-950), var(--blue-700) 58%, var(--blue-300));
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -10% -22% -10%;
+  height: 18rem;
+  background: #f7fbff;
+  border-radius: 50% 50% 0 0;
+}
+
+.hero > *:not(.floating-shape) {
+  position: relative;
+  z-index: 2;
+}
+
+.eyebrow {
+  margin: 0 0 1rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--blue-100);
+}
+
+h1 {
+  max-width: 900px;
+  margin: 0;
+  font-size: clamp(3rem, 9vw, 7rem);
+  line-height: 0.95;
+  text-wrap: balance;
+}
+
+h1 span {
+  display: block;
+  color: #cceaff;
+  text-shadow: 0 10px 26px rgba(0, 0, 0, 0.22);
+}
+
+.hero-message {
+  max-width: 720px;
+  margin: 1.5rem auto 0;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.7;
+  color: #eff8ff;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3.25rem;
+  padding: 0.9rem 1.35rem;
+  border: 0;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform
